@@ -50,15 +50,18 @@ public class SculptureViewerUI extends JFrame {
         filterButton.addActionListener(this::applyFilter);
     }
 
-    private void populateTable(List<Sculpture> sculptures) {
+    private void populateTable(List<Sculpture> sculptures) 
+    {
         // Clear the table before adding new rows
         tableModel.setRowCount(0);
-        for (Sculpture sculpture : sculptures) {
+        for (Sculpture sculpture : sculptures) 
+        {
             tableModel.addRow(sculpture.toTableRow());
         }
     }
 
-    private void applyFilter(ActionEvent event) {
+    private void applyFilter(ActionEvent event) 
+    {
         String filterText = filterField.getText().trim().toLowerCase();
 
         // Filter the sculptures based on artist or material matching the filter text
