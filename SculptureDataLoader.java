@@ -16,7 +16,7 @@ public class SculptureDataLoader {
     {
         try {
             String line = null;
-            BufferedReader reader = new BufferedReader(new FileReader(filePath))
+            BufferedReader reader = new BufferedReader(new FileReader(filePath));
 
 
             while ((line = reader.readLine()) != null) 
