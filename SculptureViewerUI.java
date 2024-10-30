@@ -1,5 +1,6 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.List;
@@ -13,7 +14,7 @@ public class SculptureViewerUI extends JFrame {
 
     public SculptureViewerUI(List<Sculpture> sculptures) {
         this.sculptures = sculptures;
-        
+
         setTitle("Sculpture Art Data Viewer");
         setSize(600, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,6 +34,12 @@ public class SculptureViewerUI extends JFrame {
         String[] columnNames = {"FID", "Title", "Location", "Artist", "Material"};
         tableModel = new DefaultTableModel(columnNames, 0);
         sculptureTable = new JTable(tableModel);
+
+        // Add TableRowSorter to enable sorting by column
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(tableModel);
+        sculptureTable.setRowSorter(sorter);
+
+        // Populate table with initial data
         populateTable(sculptures);
 
         // Scroll pane for table
@@ -53,7 +60,7 @@ public class SculptureViewerUI extends JFrame {
 
     private void applyFilter(ActionEvent event) {
         String filterText = filterField.getText().trim().toLowerCase();
-        
+
         // Filter the sculptures based on artist or material matching the filter text
         List<Sculpture> filteredSculptures = sculptures.stream()
             .filter(sculpture -> sculpture.getArtist().toLowerCase().contains(filterText) ||
@@ -62,14 +69,5 @@ public class SculptureViewerUI extends JFrame {
 
         // Populate table with filtered data
         populateTable(filteredSculptures);
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            SculptureDataLoader loader = new SculptureDataLoader();
-            List<Sculpture> sculptures = loader.loadSculptures("sculptures.txt");
-            SculptureViewerUI viewer = new SculptureViewerUI(sculptures);
-            viewer.setVisible(true);
-        });
     }
 }
