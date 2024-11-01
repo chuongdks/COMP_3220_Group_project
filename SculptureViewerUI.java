@@ -3,16 +3,16 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.util.List;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class SculptureViewerUI extends JFrame {
     private JTable sculptureTable;
     private DefaultTableModel tableModel;
     private JTextField filterField;
-    private List<Sculpture> sculptures;  // Original list of sculptures
+    private ArrayList<Sculpture> sculptures;  // Original list of sculptures
 
-    public SculptureViewerUI(List<Sculpture> sculptures) {
+    public SculptureViewerUI(ArrayList<Sculpture> sculptures) {
         this.sculptures = sculptures;
 
         setTitle("Sculpture Art Data Viewer");
@@ -50,7 +50,7 @@ public class SculptureViewerUI extends JFrame {
         filterButton.addActionListener(this::applyFilter);
     }
 
-    private void populateTable(List<Sculpture> sculptures) 
+    private void populateTable(ArrayList<Sculpture> sculptures) 
     {
         // Clear the table before adding new rows
         tableModel.setRowCount(0);
@@ -65,7 +65,7 @@ public class SculptureViewerUI extends JFrame {
         String filterText = filterField.getText().trim().toLowerCase();
 
         // Filter the sculptures based on artist or material matching the filter text
-        List<Sculpture> filteredSculptures = sculptures.stream()
+        ArrayList<Sculpture> filteredSculptures = (ArrayList<Sculpture>) sculptures.stream()
             .filter(sculpture -> sculpture.getArtist().toLowerCase().contains(filterText) ||
                                  sculpture.getMaterial().toLowerCase().contains(filterText))
             .collect(Collectors.toList());

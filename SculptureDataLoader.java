@@ -18,13 +18,12 @@ public class SculptureDataLoader {
             String line = null;
             BufferedReader reader = new BufferedReader(new FileReader(filePath));
 
-
             while ((line = reader.readLine()) != null) 
             {
                 // Split the whole String based on "," and empty space character
                 String[] data = line.split(",\\s*");
                 
-                // if 
+                // if the data has 5 arrays in it, that is one tuple already, store it
                 if (data.length == 5) 
                 {
                     int fid = Integer.parseInt(data[0].trim());
