@@ -3,13 +3,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class SculptureDataLoader {
+public class SculptureDataLoader implements SculptureTemplate {
     private ArrayList<Sculpture> sculptures;
 
     // Constructor that loads sculptures from the given file
-    public SculptureDataLoader(String filePath) {
+    public SculptureDataLoader() {
         sculptures = new ArrayList<>();
-        loadSculptures(filePath);
+        loadSculptures(FILE_NAME);
     }
 
     private void loadSculptures(String filePath) 
@@ -21,10 +21,10 @@ public class SculptureDataLoader {
             while ((line = reader.readLine()) != null) 
             {
                 // Split the whole String based on "," and empty space character
-                String[] data = line.split(",\\s*");
+                String[] data = line.split(DELIMITER);
                 
                 // if the data has 5 arrays in it, that is one tuple already, store it
-                if (data.length == 5) 
+                if (data.length == NUMBER_OF_FIELDS) 
                 {
                     int fid = Integer.parseInt(data[0].trim());
                     String title = data[1].trim();
@@ -36,7 +36,12 @@ public class SculptureDataLoader {
                     sculptures.add(sculpture);
                 }
             }
-        } catch (IOException e) {
+
+            reader.close();
+
+        } 
+        catch (IOException e) 
+        {
             System.err.println(e.getMessage());
         }
     }

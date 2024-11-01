@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-public class SculptureViewerUI extends JFrame {
+public class SculptureViewerUI extends JFrame implements SculptureTemplate{
     private JTable sculptureTable;
     private DefaultTableModel tableModel;
     private JTextField filterField;
@@ -31,8 +31,7 @@ public class SculptureViewerUI extends JFrame {
         add(filterPanel, BorderLayout.NORTH);
 
         // Initialize table with column names
-        String[] columnNames = {"FID", "Title", "Location", "Artist", "Material"};
-        tableModel = new DefaultTableModel(columnNames, 0);
+        tableModel = new DefaultTableModel(FIELD_LABELS, 0);
         sculptureTable = new JTable(tableModel);
 
         // Add TableRowSorter to enable sorting by column
