@@ -4,7 +4,7 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.*; // Probably needed it if u need to add a button to handle Event
 
 /**
  * 
