@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 public class Sculpture {
     private int fid;
     private String title;
@@ -5,7 +8,14 @@ public class Sculpture {
     private String artist;
     private String material;
 
-    // 
+    /**
+     * 
+     * @param fid
+     * @param title
+     * @param location
+     * @param artist
+     * @param material
+     */
     public Sculpture(int fid, String title, String location, String artist, String material) {
         this.fid = fid;
         this.title = title;
@@ -29,10 +39,5 @@ public class Sculpture {
     }
     public String getMaterial() { 
         return material; 
-    }
-
-    // 
-    public Object[] toTableRow() {
-        return new Object[] { fid, title, location, artist, material };
     }
 }

@@ -3,35 +3,30 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
 
-public class SculptureViewerUI extends JFrame implements SculptureTemplate{
-    private JFrame viewFrame;
+/**
+ * 
+ */
+public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     private JTable sculptureTable;
     private DefaultTableModel tableModel;
-
-    private JScrollPane scrollPane;
-    private TableRowSorter<DefaultTableModel> rowSorter;
     private JTextField filterField;
+    private TableRowSorter<DefaultTableModel> rowSorter;
 
     /**
      * 
      * @param data
      */
     public SculptureViewerUI(Object[][] data) {
-        // Initialize table with column names
-        viewFrame = new JFrame("Sculpture Art Data Viewer");
-        sculptureTable = new JTable(data, FIELD_LABELS);
+        // Set up JFrame
+        setTitle("Sculpture Art Data Viewer");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
 
-        // Scroll pane for table
-        scrollPane = new JScrollPane(sculptureTable);
-
-        // 
-        viewFrame.add(scrollPane);
-        viewFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        viewFrame.pack();
-        viewFrame.setVisible(true);
-        viewFrame.setSize(600, 400);
+        // Initialize table with data and column names
+        tableModel = new DefaultTableModel(data, FIELD_LABELS);
+        sculptureTable = new JTable(tableModel);
+        sculptureTable.setFillsViewportHeight(true);
 
         // TableRowSorter for sorting and filtering
         rowSorter = new TableRowSorter<>(tableModel);
@@ -53,6 +48,10 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate{
         });
 
         // Add components to frame
-        viewFrame.add(filterField, BorderLayout.NORTH);
+        add(new JScrollPane(sculptureTable), BorderLayout.CENTER);
+        add(filterField, BorderLayout.NORTH);
+
+        setSize(600, 400);
+        setVisible(true);
     }
 }

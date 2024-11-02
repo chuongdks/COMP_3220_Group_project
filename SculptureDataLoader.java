@@ -3,14 +3,24 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * 
+ */
 public class SculptureDataLoader implements SculptureTemplate {
     private Object[][] sculptureData;
 
-    // Constructor that loads sculptures from the given file
+    /**
+     * 
+     */
     public SculptureDataLoader() {
         sculptureData  = loadSculptures(FILE_NAME);
     }
 
+    /**
+     * 
+     * @param filePath
+     * @return
+     */
     private Object[][] loadSculptures(String filePath) 
     {
         try {
@@ -42,9 +52,11 @@ public class SculptureDataLoader implements SculptureTemplate {
         }
     }
 
-    // Getter for sculptures data
+    /**
+     * 
+     * @return
+     */
     public Object[][] getSculpturesData() {
-
         return sculptureData;
     }
 }
