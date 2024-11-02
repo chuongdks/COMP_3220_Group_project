@@ -4,50 +4,47 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class SculptureDataLoader implements SculptureTemplate {
-    private ArrayList<Sculpture> sculptures;
+    private Object[][] sculptureData;
 
     // Constructor that loads sculptures from the given file
     public SculptureDataLoader() {
-        sculptures = new ArrayList<>();
-        loadSculptures(FILE_NAME);
+        sculptureData  = loadSculptures(FILE_NAME);
     }
 
-    private void loadSculptures(String filePath) 
+    private Object[][] loadSculptures(String filePath) 
     {
         try {
+            BufferedReader br = new BufferedReader(new FileReader(filePath));
+            ArrayList<String> list = new ArrayList<>();
             String line = null;
-            BufferedReader reader = new BufferedReader(new FileReader(filePath));
 
-            while ((line = reader.readLine()) != null) 
+            while ((line = br.readLine()) != null) 
             {
-                // Split the whole String based on "," and empty space character
-                String[] data = line.split(DELIMITER);
-                
-                // if the data has 5 arrays in it, that is one tuple already, store it
-                if (data.length == NUMBER_OF_FIELDS) 
-                {
-                    int fid = Integer.parseInt(data[0].trim());
-                    String title = data[1].trim();
-                    String location = data[2].trim();
-                    String artist = data[3].trim();
-                    String material = data[4].trim();
-                    
-                    Sculpture sculpture = new Sculpture(fid, title, location, artist, material);
-                    sculptures.add(sculpture);
-                }
+                list.add(line);
+                System.out.println(line); // debugger for FileReader 
             }
+            Object[][] data = new Object[list.size()][NUMBER_OF_FIELDS];
 
-            reader.close();
+            // I use the list Array (String) to Populating the data array (row)
+            for (int i = 0; i < list.size(); i++)
+            {
+                data[i] = list.get(i).split(DELIMITER);
+            }
+            br.close();
+
+            return data;
 
         } 
         catch (IOException e) 
         {
             System.err.println(e.getMessage());
+            return null; // return nothing if catch Exception
         }
     }
 
-    // Getter for sculptures ArrayList
-    public ArrayList<Sculpture> getSculptures() {
-        return sculptures;
+    // Getter for sculptures data
+    public Object[][] getSculpturesData() {
+
+        return sculptureData;
     }
 }

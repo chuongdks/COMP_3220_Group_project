@@ -2,74 +2,57 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
-import java.awt.event.ActionEvent;
+import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 public class SculptureViewerUI extends JFrame implements SculptureTemplate{
+    private JFrame viewFrame;
     private JTable sculptureTable;
     private DefaultTableModel tableModel;
+
+    private JScrollPane scrollPane;
+    private TableRowSorter<DefaultTableModel> rowSorter;
     private JTextField filterField;
-    private ArrayList<Sculpture> sculptures;  // Original list of sculptures
 
-    public SculptureViewerUI(ArrayList<Sculpture> sculptures) {
-        this.sculptures = sculptures;
-
-        setTitle("Sculpture Art Data Viewer");
-        setSize(600, 400);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        setLayout(new BorderLayout());
-
-        // Initialize filter panel
-        JPanel filterPanel = new JPanel();
-        filterPanel.add(new JLabel("Filter by Artist/Material:"));
-        filterField = new JTextField(20);
-        filterPanel.add(filterField);
-        JButton filterButton = new JButton("Apply Filter");
-        filterPanel.add(filterButton);
-        add(filterPanel, BorderLayout.NORTH);
-
+    /**
+     * 
+     * @param data
+     */
+    public SculptureViewerUI(Object[][] data) {
         // Initialize table with column names
-        tableModel = new DefaultTableModel(FIELD_LABELS, 0);
-        sculptureTable = new JTable(tableModel);
-
-        // Add TableRowSorter to enable sorting by column
-        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(tableModel);
-        sculptureTable.setRowSorter(sorter);
-
-        // Populate table with initial data
-        populateTable(sculptures);
+        viewFrame = new JFrame("Sculpture Art Data Viewer");
+        sculptureTable = new JTable(data, FIELD_LABELS);
 
         // Scroll pane for table
-        JScrollPane scrollPane = new JScrollPane(sculptureTable);
-        add(scrollPane, BorderLayout.CENTER);
+        scrollPane = new JScrollPane(sculptureTable);
 
-        // Filter button action
-        filterButton.addActionListener(this::applyFilter);
-    }
+        // 
+        viewFrame.add(scrollPane);
+        viewFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        viewFrame.pack();
+        viewFrame.setVisible(true);
+        viewFrame.setSize(600, 400);
 
-    private void populateTable(ArrayList<Sculpture> sculptures) 
-    {
-        // Clear the table before adding new rows
-        tableModel.setRowCount(0);
-        for (Sculpture sculpture : sculptures) 
-        {
-            tableModel.addRow(sculpture.toTableRow());
-        }
-    }
+        // TableRowSorter for sorting and filtering
+        rowSorter = new TableRowSorter<>(tableModel);
+        sculptureTable.setRowSorter(rowSorter);
 
-    private void applyFilter(ActionEvent event) 
-    {
-        String filterText = filterField.getText().trim().toLowerCase();
+        // Filter field for filtering rows based on text input
+        filterField = new JTextField();
+        filterField.setToolTipText("Type to filter...");
+        filterField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                String text = filterField.getText();
+                if (text.trim().isEmpty()) {
+                    rowSorter.setRowFilter(null);
+                } else {
+                    rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
+                }
+            }
+        });
 
-        // Filter the sculptures based on artist or material matching the filter text
-        ArrayList<Sculpture> filteredSculptures = (ArrayList<Sculpture>) sculptures.stream()
-            .filter(sculpture -> sculpture.getArtist().toLowerCase().contains(filterText) ||
-                                 sculpture.getMaterial().toLowerCase().contains(filterText))
-            .collect(Collectors.toList());
-
-        // Populate table with filtered data
-        populateTable(filteredSculptures);
+        // Add components to frame
+        viewFrame.add(filterField, BorderLayout.NORTH);
     }
 }
