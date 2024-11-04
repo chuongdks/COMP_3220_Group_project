@@ -3,7 +3,7 @@
     every class that needs the details of the file or fields would need to 
     implement it. This is a way around "global variables" done C/C++
 */
- interface SculptureTemplate {
+public interface SculptureTemplate {
     public static final int NUMBER_OF_FIELDS = 5;
     public static final String[] FIELD_LABELS = {"FID", "Title", "Location", "Artist", "Material"};
     public static final String[] FIELD_TYPES = {"Integer", "String", "String", "String", "String"}; // Not used

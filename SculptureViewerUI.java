@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.*; // Probably needed it if u need to add a button to handle Event
 
 /**
- * 
+ * Provides a graphical user interface for viewing and filtering sculpture data.
  */
 public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     private JFrame viewFrame;
@@ -17,8 +17,9 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     private TableRowSorter<DefaultTableModel> rowSorter;
 
     /**
-     * 
-     * @param data
+     * Constructs a new SculptureViewerUI instance with the given data to display in the table.
+     *
+     * @param data a 2D array containing sculpture data to populate the table
      */
     public SculptureViewerUI(Object[][] data) {
         // Set up JFrame 

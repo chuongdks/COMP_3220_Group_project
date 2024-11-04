@@ -1,5 +1,5 @@
 /**
- * 
+ * Represents a sculpture with fields for ID, title, location, artist, and material.
  */
 public class Sculpture {
     private int fid;
@@ -9,12 +9,13 @@ public class Sculpture {
     private String material;
 
     /**
-     * 
-     * @param fid
-     * @param title
-     * @param location
-     * @param artist
-     * @param material
+     * Constructs a new Sculpture instance with specified attributes.
+     *
+     * @param fid the unique identifier of the sculpture
+     * @param title the title of the sculpture
+     * @param location the location of the sculpture
+     * @param artist the artist who created the sculpture
+     * @param material the material used for the sculpture
      */
     public Sculpture(int fid, String title, String location, String artist, String material) {
         this.fid = fid;
@@ -24,7 +25,11 @@ public class Sculpture {
         this.material = material;
     }
 
-    // Getter class for each Attributes
+    /**
+     * Gets the unique identifier (FID) of the sculpture.
+     *
+     * @return the sculpture's FID
+     */
     public int getFid() { 
         return fid; 
     }
