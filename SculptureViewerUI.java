@@ -72,6 +72,7 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         setVisible(true);
     }
 
+    // // Tester for the SculptureViewerUI class. Uncomment for debugging
     // public static void main(String[] args) {
     //     // Sample data array representing sculptures
     //     Object[][] data = {

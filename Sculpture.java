@@ -46,7 +46,7 @@ public class Sculpture {
         return material; 
     }
 
-    // // Tester for the sculpture class
+    // // Tester for the sculpture class. Uncomment for debugging
     // public static void main(String[] args) {
     //     // Sample data array representing sculptures
     //     Sculpture sculpture = new Sculpture(1, "Statue of Liberty", "New York", "Frédéric Auguste Bartholdi", "Copper");

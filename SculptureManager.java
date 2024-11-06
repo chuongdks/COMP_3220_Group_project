@@ -41,7 +41,7 @@ public class SculptureManager implements SculptureTemplate {
                 String material = fields[4];
                 sculptureList.add(new Sculpture(fid, title, location, artist, material));
 
-                System.out.println(line); // debugger to see if File Reader read correctly
+                // System.out.println(line); // debugger to see if File Reader read correctly
             }
         } 
         catch (IOException e) 
@@ -72,7 +72,7 @@ public class SculptureManager implements SculptureTemplate {
         return data;
     }
 
-    // // Tester for the SculptureManager class
+    // // Tester for the SculptureManager class. Uncomment for debugging
     // public static void main(String[] args) {
     //     SculptureManager loader = new SculptureManager(); // load the txt file 
     //     Object[][] sculpturesData = loader.getSculpturesData();
