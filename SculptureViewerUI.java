@@ -64,11 +64,23 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         });
 
         // Add components to frame
-        add(new JScrollPane(sculptureTable), BorderLayout.CENTER);
+        add(new JScrollPane(sculptureTable));
 
         // Set up for JFrame after the frame has been set up
         viewFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 400); // Using viewFrame.setSize() cause the screen to be minimized at first. Dont know why
         setVisible(true);
+    }
+
+    // public static void main(String[] args) {
+    //     // Sample data array representing sculptures
+    //     Object[][] data = {
+    //         {0, "R.H. Herb Gray Bust"   , "Dieppe Gardens"  , "Unknown"         , "Bronze"          },
+    //         {1, "Dieppe Gardens Plaque" , "Jackson Park"    , "Leo Rosenthal"   , "Painted Steel"   },
+    //         {2, "Eternal Flame"         , "City Hall"       , "Jane Sculpture"  , "Granite"         }
+    //     };
+
+    //     // Instantiate the SculptureViewerUI with sample data
+    //     new SculptureViewerUI(data);
     }
 }
