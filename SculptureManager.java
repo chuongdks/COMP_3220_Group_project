@@ -52,8 +52,40 @@ public class SculptureManager implements SculptureTemplate {
         return sculptureList;
     }
 
+    /**
+     * Converts the list of Sculpture objects into a 2D array of Object for use in JTable.
+     *
+     * @return a 2D array containing sculpture data
+     */
+    public Object[][] getSculpturesData() 
+    {
+        Object[][] data = new Object[sculptures.size()][NUMBER_OF_FIELDS];
+        for (int i = 0; i < sculptures.size(); i++) 
+        {
+            Sculpture sculpture = sculptures.get(i);
+            data[i][0] = sculpture.getFid();
+            data[i][1] = sculpture.getTitle();
+            data[i][2] = sculpture.getLocation();
+            data[i][3] = sculpture.getArtist();
+            data[i][4] = sculpture.getMaterial();
+        }
+        return data;
+    }
+
     // Tester for the SculptureManager class
     public static void main(String[] args) {
         SculptureManager loader = new SculptureManager(); // load the txt file 
+        Object[][] sculpturesData = loader.getSculpturesData();
+
+        // Check if data was loaded successfully
+        for (Object[] row : sculpturesData) 
+        {
+            for (Object field : row) 
+            {
+                System.out.print(field + " "); // Print the content in the row first
+            }
+            System.out.println(); // Newline after each sculpture row
+        }
+
     }      
 }
