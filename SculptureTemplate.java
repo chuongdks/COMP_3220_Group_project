@@ -5,7 +5,7 @@
 */
 public interface SculptureTemplate {
     public static final int NUMBER_OF_FIELDS = 5;
-    public static final String[] FIELD_LABELS = {"FID", "Title", "Location", "Artist", "Material"};
+    public static final String[] FIELD_LABELS = {"FID", "Title", "Location", "Artist", "Material"}; // Column Name data
     public static final String[] FIELD_TYPES = {"Integer", "String", "String", "String", "String"}; // Not used
     public static final String FILE_NAME = "sculptures.txt";
     public static final String DELIMITER = ",";
