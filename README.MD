@@ -7,4 +7,6 @@ Tutorial videos for Java Swing:
 3. https://www.youtube.com/watch?v=U5Sh0KDLXSc
 
 HOW TO RUN THE APPLICATION:
-Run the command: java -jar Group7_Project.jar
+1. Download Group7_Project.jar and sculptures.txt.
+2. Open an instance of Command Prompt and navigate to the relevant directory (where the .jar and .txt were downloaded).
+3. Run the command: java -jar Group7_Project.jar
