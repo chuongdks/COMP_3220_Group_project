@@ -72,20 +72,20 @@ public class SculptureManager implements SculptureTemplate {
         return data;
     }
 
-    // Tester for the SculptureManager class
-    public static void main(String[] args) {
-        SculptureManager loader = new SculptureManager(); // load the txt file 
-        Object[][] sculpturesData = loader.getSculpturesData();
+    // // Tester for the SculptureManager class
+    // public static void main(String[] args) {
+    //     SculptureManager loader = new SculptureManager(); // load the txt file 
+    //     Object[][] sculpturesData = loader.getSculpturesData();
 
-        // Check if data was loaded successfully
-        for (Object[] row : sculpturesData) 
-        {
-            for (Object field : row) 
-            {
-                System.out.print(field + " "); // Print the content in the row first
-            }
-            System.out.println(); // Newline after each sculpture row
-        }
+    //     // Check if data was loaded successfully
+    //     for (Object[] row : sculpturesData) 
+    //     {
+    //         for (Object field : row) 
+    //         {
+    //             System.out.print(field + " "); // Print the content in the row first
+    //         }
+    //         System.out.println(); // Newline after each sculpture row
+    //     }
 
-    }      
+    // }      
 }

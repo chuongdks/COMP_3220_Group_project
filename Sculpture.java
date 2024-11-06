@@ -46,14 +46,14 @@ public class Sculpture {
         return material; 
     }
 
-    // Tester for the sculpture class
-    public static void main(String[] args) {
-        // Sample data array representing sculptures
-        Sculpture sculpture = new Sculpture(1, "Statue of Liberty", "New York", "Frédéric Auguste Bartholdi", "Copper");
-        System.out.println(sculpture.getFid()); 
-        System.out.println(sculpture.getTitle()); 
-        System.out.println(sculpture.getLocation()); 
-        System.out.println(sculpture.getArtist()); 
-        System.out.println(sculpture.getMaterial()); 
-    }    
+    // // Tester for the sculpture class
+    // public static void main(String[] args) {
+    //     // Sample data array representing sculptures
+    //     Sculpture sculpture = new Sculpture(1, "Statue of Liberty", "New York", "Frédéric Auguste Bartholdi", "Copper");
+    //     System.out.println(sculpture.getFid()); 
+    //     System.out.println(sculpture.getTitle()); 
+    //     System.out.println(sculpture.getLocation()); 
+    //     System.out.println(sculpture.getArtist()); 
+    //     System.out.println(sculpture.getMaterial()); 
+    // }    
 }

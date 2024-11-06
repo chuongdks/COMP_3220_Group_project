@@ -72,15 +72,15 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        // Sample data array representing sculptures
-        Object[][] data = {
-            {0, "R.H. Herb Gray Bust"   , "Dieppe Gardens"  , "Unknown"         , "Bronze"          },
-            {1, "Dieppe Gardens Plaque" , "Jackson Park"    , "Leo Rosenthal"   , "Painted Steel"   },
-            {2, "Eternal Flame"         , "City Hall"       , "Jane Sculpture"  , "Granite"         }
-        };
+    // public static void main(String[] args) {
+    //     // Sample data array representing sculptures
+    //     Object[][] data = {
+    //         {0, "R.H. Herb Gray Bust"   , "Dieppe Gardens"  , "Unknown"         , "Bronze"          },
+    //         {1, "Dieppe Gardens Plaque" , "Jackson Park"    , "Leo Rosenthal"   , "Painted Steel"   },
+    //         {2, "Eternal Flame"         , "City Hall"       , "Jane Sculpture"  , "Granite"         }
+    //     };
 
-        // Instantiate the SculptureViewerUI with sample data
-        new SculptureViewerUI(data);
-    }
+    //     // Instantiate the SculptureViewerUI with sample data
+    //     new SculptureViewerUI(data);
+    // }
 }
