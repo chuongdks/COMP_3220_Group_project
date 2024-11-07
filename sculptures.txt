@@ -1,79 +1,79 @@
-0,R.H. Herb Gray Bust,Dieppe Gardens,Unknown,Bronze
-1,Dieppe Gardens Plaque,Dieppe Gardens,Unknown,Bronze
-2,Eternal Flame,Dieppe Gardens,Unknown,Granite
-3,Navy and Merchant Navy Memorial,Dieppe Gardens,Unknown,Granite
-4,Service Personnel Monument,Dieppe Gardens,Unknown,Variety
-5,Dieppe Red Beach Memorial,Dieppe Gardens,Rory O'Connor,Granite
-6,Cairn to Pipe Major J. Copeland,Dieppe Gardens,Unknown,Bronze
-7,Royal Canadian Air Force Memorial,Dieppe Gardens,Laura and Mark Williams,Variety
-8,Knights of Columbus Peace Monument,Dieppe Gardens,Unknown,Variety
-9,Korean War Veterans Memorial Wall,Dieppe Gardens,Unknown,Granite
-10,Monument of Memories,Jackson Park,Unknown,Variety
-11,Sea,Jackson Park,Unknown,Variety
-12,Land,Jackson Park,Unknown,Variety
-13,Air,Jackson Park,Unknown,Variety
-14,Robert Burns Bust,Jackson Park,Unknown,Bronze
-15,Royal Canadian Air Force Memorial,Jackson Park,Unknown,Variety
-16,Holodomor Monument,Jackson Park,Unknown,Granite
-17,Copernicus Astrolabium and Sundial,Jackson Park,Unknown,Bronze
-18,South African War Memorial,Jackson Park,Unknown,Variety
-19,Charles Brooks Memorial Peace Fountain,Reaume Park/Coventry Gardens,Unknown,Variety
-20,Anne,Reaume Park/Coventry Gardens,Leo Mol,Bronze
-21,"Fight for the Living""""",Reaume Park/Coventry Gardens,Unknown,Variety
-22,Afganistan,Reaume Park/Coventry Gardens,Unknown,Granite
-23,Peacekeepers,Reaume Park/Coventry Gardens,Unknown,Granite
-24,Bird Bath II,Reaume Park/Coventry Gardens,Unknown,Bronze
-25,Bird Bath I,Reaume Park/Coventry Gardens,Unknown,Bronze
-26,Sisters,Reaume Park/Coventry Gardens,Morton Katz,Black Finished Steel
-27,Noon Mark,Albert Weeks Memorial Garden,Unknown,Variety
-28,Albert Howard Weeks Bust,Albert Weeks Memorial Garden,Unknown,Variety
-29,Four Generations,Ford City Parkette (Whelpton Park)  at Drouillard Rd. and Whelpton St.,Mark Williams,Bronze
-30,Guitar Man,"Sandwich Public Library, 3312 Sandwich St., Windsor, Ont.",Al Green,Bronze
-31,Unknown,City Hall,Unknown,Bronze
-32,City Hall Square Fountains,City Hall,Unknown,Granite
-33,Neighbours,City Hall,Leo Rosenthal,Bronze
-34,Space Composition,City Hall,Hadyn Davies,Painted Steel
-35,Tempo,City Hall,Ronald Zerafa,Granite
-36,Inukshuk,City Hall,Matt Beasley and Paulette Hunt,Granite
-37,Trees,Vision Corridor,Leo Rosenthal,Welded Copper
-38,Tryptych,Vision Corridor,Gord Smith,Bronze
-39,Lady,Vision Corridor,Leo Rosenthal,Bronze
-40,Three Fates,Vision Corridor,Morton Katz,Painted steel Poles with Bronze Figures
-41,Ribbon of Friendship,Vision Corridor,Xiaofeng Yin,Painted Steel
-42,Consophia,Sculpture Park,Ian Lazarus,Painted Steel w/ Stainless Steel Chain
-43,Cordella,Sculpture Park,Maryon Kantaroff,Cast Aluminum
-44,Obelisk,Sculpture Park,Sigmund Reszetnick,Painted Steel
-45,Claim Post,Sculpture Park,Scott Mckay,Painted Stainless Steel
-46,Inukshuk,Sculpture Park,Unknown,Limestone
-47,The Columns,Sculpture Park,Ronald Zerafa,Grey Concrete
-48,Businessman on a Horse,Sculpture Park,William McElcheran,Bronze
-49,From Ground to Ask the Sky,Sculpture Park,Royden Mills,Steel
-50,Racing Horses,Sculpture Park,Stephan Derrick Hudson,Bronze
-51,Tower Song,Sculpture Park,Ted Bieler,Cast Aluminum
-52,Audio Corridor,Sculpture Park,Ian Lazarus,Stainless Steel
-53,Century Rock,Sculpture Park,Unknown,Variety
-54,Chicken and Egg,Sculpture Park,Morton Katz,Painted Steel Frame and Marble Egg
-55,Tohawah,Sculpture Park,Anne Harris,Painted Steel
-56,Tembo,Sculpture Park,Stephan Derrick,Bronze
-57,Billy Goat Spring,Sculpture Park,Leszek Rumczuk,Bronze
-58,Morning Flight,Sculpture Park,Gerald Gladstone,Painted Plate Steel
-59,Rinterzo,Sculpture Park,Joe DeAngelis,Terrazzo
-60,Penguins on a Waterfall,Sculpture Park,Yolanda Vandergaast,Painted Aluminum
-61,Eve's Apple,Sculpture Park,Edwina Sandys,Painted Steel
-62,Salutations,Sculpture Park,Ralph Hicks,Stainless Steel
-63,Flying Men,Sculpture Park,Dame Elisabeth Frink,Bronze
-64,The Garden,Sculpture Park,Maryon Kantaroff,Bronze
-65,Union Six,Sculpture Park,Bruce Watson,Bronze
-66,A Butterfly's Wings,Sculpture Park,Brain Injury Association,Bronze and Granite (?)
-67,Consolation,Sculpture Park,Leo Rosenthal,Bronze
-68,Bell Measure,Sculpture Park,Stephan Cruise,White Oak and Bronze
-69,King and Queen,Sculpture Park,Sorel Etrog,Painted Steel
-70,Voyageur Canoe,Sculpture Park,Ralph Ireland,Basswood
-71,Canadian Vietnam Veterans Memorial,Sculpture Park,Unknown,Granite
-72,Dancing Bear,Sculpture Park,Pauta Saila,Bronze
-73,Sisters II,Sculpture Park,Morton Katz,Black Finished Steel
-74,Sinclair Oil Apatosaurus,Sculpture Park,Unknown,Fibreglass
-75,Tiger Business,Sculpture Park,A. Duquette,Painted steel buoy and bronze head
-76,Triceratops,Sculpture Park,Unknown,Fibreglass
-77,Space Plough II,Sculpture Park,Sorel Etrog,Painted Steel
-78,Composition with Five Elements,Sculpture Park,Hadyn Davies,Painted Aluminum
+0,R.H. Herb Gray Bust,Dieppe Gardens,Unknown,Bronze,1
+1,Dieppe Gardens Plaque,Dieppe Gardens,Unknown,Bronze,2
+2,Eternal Flame,Dieppe Gardens,Unknown,Granite,3
+3,Navy and Merchant Navy Memorial,Dieppe Gardens,Unknown,Granite,4
+4,Service Personnel Monument,Dieppe Gardens,Unknown,Variety,5
+5,Dieppe Red Beach Memorial,Dieppe Gardens,Rory O'Connor,Granite,1
+6,Cairn to Pipe Major J. Copeland,Dieppe Gardens,Unknown,Bronze,2
+7,Royal Canadian Air Force Memorial,Dieppe Gardens,Laura and Mark Williams,Variety,3
+8,Knights of Columbus Peace Monument,Dieppe Gardens,Unknown,Variety,4
+9,Korean War Veterans Memorial Wall,Dieppe Gardens,Unknown,Granite,5
+10,Monument of Memories,Jackson Park,Unknown,Variety,1
+11,Sea,Jackson Park,Unknown,Variety,2
+12,Land,Jackson Park,Unknown,Variety,3
+13,Air,Jackson Park,Unknown,Variety,4
+14,Robert Burns Bust,Jackson Park,Unknown,Bronze,5
+15,Royal Canadian Air Force Memorial,Jackson Park,Unknown,Variety,1
+16,Holodomor Monument,Jackson Park,Unknown,Granite,2
+17,Copernicus Astrolabium and Sundial,Jackson Park,Unknown,Bronze,3
+18,South African War Memorial,Jackson Park,Unknown,Variety,4
+19,Charles Brooks Memorial Peace Fountain,Reaume Park/Coventry Gardens,Unknown,Variety,5
+20,Anne,Reaume Park/Coventry Gardens,Leo Mol,Bronze,1
+21,"Fight for the Living""""",Reaume Park/Coventry Gardens,Unknown,Variety,2
+22,Afganistan,Reaume Park/Coventry Gardens,Unknown,Granite,3
+23,Peacekeepers,Reaume Park/Coventry Gardens,Unknown,Granite,4
+24,Bird Bath II,Reaume Park/Coventry Gardens,Unknown,Bronze,5
+25,Bird Bath I,Reaume Park/Coventry Gardens,Unknown,Bronze,1
+26,Sisters,Reaume Park/Coventry Gardens,Morton Katz,Black Finished Steel,2
+27,Noon Mark,Albert Weeks Memorial Garden,Unknown,Variety,3
+28,Albert Howard Weeks Bust,Albert Weeks Memorial Garden,Unknown,Variety,4
+29,Four Generations,Ford City Parkette (Whelpton Park)  at Drouillard Rd. and Whelpton St.,Mark Williams,Bronze,5
+30,Guitar Man,Sandwich Public Library 3312 Sandwich St Windsor Ont,Al Green,Bronze,1
+31,Unknown,City Hall,Unknown,Bronze,2
+32,City Hall Square Fountains,City Hall,Unknown,Granite,3
+33,Neighbours,City Hall,Leo Rosenthal,Bronze,4
+34,Space Composition,City Hall,Hadyn Davies,Painted Steel,5
+35,Tempo,City Hall,Ronald Zerafa,Granite,1
+36,Inukshuk,City Hall,Matt Beasley and Paulette Hunt,Granite,2
+37,Trees,Vision Corridor,Leo Rosenthal,Welded Copper,3
+38,Tryptych,Vision Corridor,Gord Smith,Bronze,4
+39,Lady,Vision Corridor,Leo Rosenthal,Bronze,5
+40,Three Fates,Vision Corridor,Morton Katz,Painted steel Poles with Bronze Figures,1
+41,Ribbon of Friendship,Vision Corridor,Xiaofeng Yin,Painted Steel,2
+42,Consophia,Sculpture Park,Ian Lazarus,Painted Steel w/ Stainless Steel Chain,3
+43,Cordella,Sculpture Park,Maryon Kantaroff,Cast Aluminum,4
+44,Obelisk,Sculpture Park,Sigmund Reszetnick,Painted Steel,5
+45,Claim Post,Sculpture Park,Scott Mckay,Painted Stainless Steel,5
+46,Inukshuk,Sculpture Park,Unknown,Limestone,1
+47,The Columns,Sculpture Park,Ronald Zerafa,Grey Concrete,2
+48,Businessman on a Horse,Sculpture Park,William McElcheran,Bronze,3
+49,From Ground to Ask the Sky,Sculpture Park,Royden Mills,Steel,4
+50,Racing Horses,Sculpture Park,Stephan Derrick Hudson,Bronze,5
+51,Tower Song,Sculpture Park,Ted Bieler,Cast Aluminum,1
+52,Audio Corridor,Sculpture Park,Ian Lazarus,Stainless Steel,2
+53,Century Rock,Sculpture Park,Unknown,Variety,3
+54,Chicken and Egg,Sculpture Park,Morton Katz,Painted Steel Frame and Marble Egg,4
+55,Tohawah,Sculpture Park,Anne Harris,Painted Steel,5
+56,Tembo,Sculpture Park,Stephan Derrick,Bronze,1
+57,Billy Goat Spring,Sculpture Park,Leszek Rumczuk,Bronze,2
+58,Morning Flight,Sculpture Park,Gerald Gladstone,Painted Plate Steel,3
+59,Rinterzo,Sculpture Park,Joe DeAngelis,Terrazzo,4
+60,Penguins on a Waterfall,Sculpture Park,Yolanda Vandergaast,Painted Aluminum,5
+61,Eve's Apple,Sculpture Park,Edwina Sandys,Painted Steel,1
+62,Salutations,Sculpture Park,Ralph Hicks,Stainless Steel,2
+63,Flying Men,Sculpture Park,Dame Elisabeth Frink,Bronze,3
+64,The Garden,Sculpture Park,Maryon Kantaroff,Bronze,4
+65,Union Six,Sculpture Park,Bruce Watson,Bronze,5
+66,A Butterfly's Wings,Sculpture Park,Brain Injury Association,Bronze and Granite (?),1
+67,Consolation,Sculpture Park,Leo Rosenthal,Bronze,2
+68,Bell Measure,Sculpture Park,Stephan Cruise,White Oak and Bronze,3
+69,King and Queen,Sculpture Park,Sorel Etrog,Painted Steel,4
+70,Voyageur Canoe,Sculpture Park,Ralph Ireland,Basswood,5
+71,Canadian Vietnam Veterans Memorial,Sculpture Park,Unknown,Granite,1
+72,Dancing Bear,Sculpture Park,Pauta Saila,Bronze,2
+73,Sisters II,Sculpture Park,Morton Katz,Black Finished Steel,3
+74,Sinclair Oil Apatosaurus,Sculpture Park,Unknown,Fibreglass,4
+75,Tiger Business,Sculpture Park,A. Duquette,Painted steel buoy and bronze head,5
+76,Triceratops,Sculpture Park,Unknown,Fibreglass,1
+77,Space Plough II,Sculpture Park,Sorel Etrog,Painted Steel,2
+78,Composition with Five Elements,Sculpture Park,Hadyn Davies,Painted Aluminum,3
