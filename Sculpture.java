@@ -1,5 +1,5 @@
 /**
- * Represents a sculpture with fields for ID, title, location, artist, and material.
+ * Represents a sculpture with fields for ID, title, location, artist, and material and reviews.
  */
 public class Sculpture {
     private int fid;
@@ -7,22 +7,25 @@ public class Sculpture {
     private String location;
     private String artist;
     private String material;
+    private int rating;
 
     /**
      * Constructs a new Sculpture instance with specified attributes.
      *
      * @param fid the unique identifier of the sculpture
+     * @param review the rating of the sculpture
      * @param title the title of the sculpture
      * @param location the location of the sculpture
      * @param artist the artist who created the sculpture
      * @param material the material used for the sculpture
      */
-    public Sculpture(int fid, String title, String location, String artist, String material) {
+    public Sculpture(int fid, String title, String location, String artist, String material, int rating) {
         this.fid = fid;
         this.title = title;
         this.location = location;
         this.artist = artist;
         this.material = material;
+        this.rating= rating;
     }
 
     /**
@@ -44,6 +47,9 @@ public class Sculpture {
     }
     public String getMaterial() { 
         return material; 
+    }
+    public int getRating() { 
+        return rating; 
     }
 
     // // Tester for the sculpture class. Uncomment for debugging
