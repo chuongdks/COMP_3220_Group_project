@@ -39,9 +39,11 @@ public class SculptureManager implements SculptureTemplate {
                 String location = fields[2];
                 String artist = fields[3];
                 String material = fields[4];
-                sculptureList.add(new Sculpture(fid, title, location, artist, material));
+                int rating= Integer.parseInt(fields[5]);
+                sculptureList.add(new Sculpture(fid, title, location, artist, material, rating));
 
                 // System.out.println(line); // debugger to see if File Reader read correctly
+                
             }
         } 
         catch (IOException e) 
@@ -68,6 +70,7 @@ public class SculptureManager implements SculptureTemplate {
             data[i][2] = sculpture.getLocation();
             data[i][3] = sculpture.getArtist();
             data[i][4] = sculpture.getMaterial();
+            data[i][5] = sculpture.getRating();
         }
         return data;
     }
