@@ -29,6 +29,7 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         // Set up JTable and DefaultTableModel to fill up the Table content
         defTableModel = new DefaultTableModel(data, FIELD_LABELS); // Parameter is Double Array Object for the Rows and Array Object for the Column
         sculptureTable = new JTable(defTableModel);
+        
 
         // TableRowSorter for Sorting each attributes
         rowSorter = new TableRowSorter<>(defTableModel); // the parameter is a DefaultTableModel object
@@ -76,9 +77,9 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     // public static void main(String[] args) {
     //     // Sample data array representing sculptures
     //     Object[][] data = {
-    //         {0, "R.H. Herb Gray Bust"   , "Dieppe Gardens"  , "Unknown"         , "Bronze"          },
-    //         {1, "Dieppe Gardens Plaque" , "Jackson Park"    , "Leo Rosenthal"   , "Painted Steel"   },
-    //         {2, "Eternal Flame"         , "City Hall"       , "Jane Sculpture"  , "Granite"         }
+    //         {0, "R.H. Herb Gray Bust"   , "Dieppe Gardens"  , "Unknown"         , "Bronze",         "1"   },
+    //         {1, "Dieppe Gardens Plaque" , "Jackson Park"    , "Leo Rosenthal"   , "Painted Steel",  "2"   },
+    //         {2, "Eternal Flame"         , "City Hall"       , "Jane Sculpture"  , "Granite",        "3"   }
     //     };
 
     //     // Instantiate the SculptureViewerUI with sample data
