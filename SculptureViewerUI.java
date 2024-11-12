@@ -4,7 +4,8 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
-import java.awt.event.*; // Probably needed it if u need to add a button to handle Event
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Provides a graphical user interface for viewing and filtering sculpture data.
@@ -15,6 +16,14 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     private DefaultTableModel defTableModel; // Need this thing for TableRowSorter
     private JTextField searchTextField;
     private TableRowSorter<DefaultTableModel> rowSorter;
+
+    // Input fields and button to add a row
+    private JTextField textFieldFID;
+    private JTextField textFieldTitle;
+    private JTextField textFieldLocation;
+    private JTextField textFieldArtist;
+    private JTextField textFieldMaterial;
+    private JButton addButton;
 
     /**
      * Constructs a new SculptureViewerUI instance with the given data to display in the table.
@@ -30,11 +39,13 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         defTableModel = new DefaultTableModel(data, FIELD_LABELS); // Parameter is Double Array Object for the Rows and Array Object for the Column
         sculptureTable = new JTable(defTableModel);
         
-
         // TableRowSorter for Sorting each attributes
         rowSorter = new TableRowSorter<>(defTableModel); // the parameter is a DefaultTableModel object
         sculptureTable.setRowSorter(rowSorter);
 
+/*
+ * This part is for the Search Bar
+ */
         // Filter field for filtering rows based on text input
         searchTextField = new JTextField();
         add(searchTextField, BorderLayout.NORTH); // put the search field up north of the table
@@ -64,25 +75,56 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
             }
         });
 
-        // Add components to frame
+/*
+ * This part is for the Update Table Panel
+ */
+        // Set up input fields and button for adding new rows
+        JPanel inputPanel = new JPanel(new GridLayout(6, 2));
+
+        textFieldFID = new JTextField();
+        textFieldTitle = new JTextField();
+        textFieldLocation = new JTextField();
+        textFieldArtist = new JTextField();
+        textFieldMaterial = new JTextField();
+        addButton = new JButton("Add");
+
+        inputPanel.add(new JLabel("FID"));
+        inputPanel.add(textFieldFID);
+        inputPanel.add(new JLabel("Title"));
+        inputPanel.add(textFieldTitle);
+        inputPanel.add(new JLabel("Location"));
+        inputPanel.add(textFieldLocation);
+        inputPanel.add(new JLabel("Artist"));
+        inputPanel.add(textFieldArtist);
+        inputPanel.add(new JLabel("Material"));
+        inputPanel.add(textFieldMaterial);
+        inputPanel.add(new JLabel()); // Empty cell for spacing
+        inputPanel.add(addButton);
+
+        add(inputPanel, BorderLayout.SOUTH);
         add(new JScrollPane(sculptureTable));
 
+        // Action listener for the Add button to insert data from text fields into the table
+
+/*
+ * Set up for JFrame after all is done. Must be put at bottom dont know why
+ */
         // Set up for JFrame after the frame has been set up
         viewFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 400); // Using viewFrame.setSize() cause the screen to be minimized at first. Dont know why
         setVisible(true);
     }
 
-    // // Tester for the SculptureViewerUI class. Uncomment for debugging
-    // public static void main(String[] args) {
-    //     // Sample data array representing sculptures
-    //     Object[][] data = {
-    //         {0, "R.H. Herb Gray Bust"   , "Dieppe Gardens"  , "Unknown"         , "Bronze",         "1"   },
-    //         {1, "Dieppe Gardens Plaque" , "Jackson Park"    , "Leo Rosenthal"   , "Painted Steel",  "2"   },
-    //         {2, "Eternal Flame"         , "City Hall"       , "Jane Sculpture"  , "Granite",        "3"   }
-    //     };
+    // Tester for the SculptureViewerUI class. Uncomment for debugging
+    public static void main(String[] args) {
+        // Sample data array representing sculptures
+        Object[][] data = {
+            {0, "R.H. Herb Gray Bust"   , "Dieppe Gardens"  , "Unknown"         , "Bronze",         "1"   },
+            {1, "Dieppe Gardens Plaque" , "Jackson Park"    , "Leo Rosenthal"   , "Painted Steel",  "2"   },
+            {2, "Eternal Flame"         , "City Hall"       , "Jane Sculpture"  , "Granite",        "3"   }
+        };
 
-    //     // Instantiate the SculptureViewerUI with sample data
-    //     new SculptureViewerUI(data);
-    // }
+        // Instantiate the SculptureViewerUI with sample data
+        new SculptureViewerUI(data);
+    }
 }
