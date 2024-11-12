@@ -31,6 +31,9 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
      * @param data a 2D array containing sculpture data to populate the table
      */
     public SculptureViewerUI(Object[][] data) {
+/*
+ * This part is for Setting up JFrame, JTable and add a TableRowSorter
+ */
         // Set up JFrame 
         viewFrame = new JFrame("Sculpture Art Data Viewer");
         JFrame.setDefaultLookAndFeelDecorated(true);
@@ -79,7 +82,7 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
  * This part is for the Update Table Panel
  */
         // Set up input fields and button for adding new rows
-        JPanel inputPanel = new JPanel(new GridLayout(6, 2));
+        JPanel inputPanel = new JPanel(new GridLayout(6, 2)); 
 
         textFieldFID = new JTextField();
         textFieldTitle = new JTextField();
@@ -101,11 +104,16 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         inputPanel.add(new JLabel()); // Empty cell for spacing
         inputPanel.add(addButton);
 
-        add(inputPanel, BorderLayout.SOUTH);
+        add(inputPanel, BorderLayout.WEST);
         add(new JScrollPane(sculptureTable));
 
         // Action listener for the Add button to insert data from text fields into the table
-
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addRowToTable();
+            }
+        });
 /*
  * Set up for JFrame after all is done. Must be put at bottom dont know why
  */
@@ -113,6 +121,27 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         viewFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 400); // Using viewFrame.setSize() cause the screen to be minimized at first. Dont know why
         setVisible(true);
+    }
+
+    // addRowToTable method. Gonna put this in a differnt file
+    private void addRowToTable() 
+    {
+        // Get the data from text fields
+        String fid = textFieldFID.getText();
+        String title = textFieldTitle.getText();
+        String location = textFieldLocation.getText();
+        String artist = textFieldArtist.getText();
+        String material = textFieldMaterial.getText();
+
+        // Add the data as a new row in the table model
+        defTableModel.addRow(new Object[]{fid, title, location, artist, material});
+
+        // Clear the text fields after adding
+        textFieldFID.setText("");
+        textFieldTitle.setText("");
+        textFieldLocation.setText("");
+        textFieldArtist.setText("");
+        textFieldMaterial.setText("");
     }
 
     // Tester for the SculptureViewerUI class. Uncomment for debugging
