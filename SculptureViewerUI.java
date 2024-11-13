@@ -62,6 +62,8 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         // Filter field for filtering rows based on text input
         searchTextField = new JTextField();
         searchTextField.setColumns(10);
+        searchTextField.setFont(new java.awt.Font("Segoe UI", 2, 12)); 
+        searchTextField.setText("Search Here");
         searchTextField.setToolTipText("Type to search any information from every column");
 
         // Add DocumentListener to update the filter in real-time
