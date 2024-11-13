@@ -6,6 +6,8 @@ import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * Provides a graphical user interface for viewing and filtering sculpture data.
@@ -17,13 +19,21 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     private JTextField searchTextField;
     private TableRowSorter<DefaultTableModel> rowSorter;
 
-    // Input fields and button to add a row
+    // First Panel: Input fields and button to add a row
     private JTextField textFieldFID;
     private JTextField textFieldTitle;
     private JTextField textFieldLocation;
     private JTextField textFieldArtist;
     private JTextField textFieldMaterial;
     private JButton addButton;
+
+    // Second Panel: Display selected row's details and update them
+    private JTextField updateFieldFID;
+    private JTextField updateFieldTitle;
+    private JTextField updateFieldLocation;
+    private JTextField updateFieldArtist;
+    private JTextField updateFieldMaterial;
+    private JButton updateButton;
 
     /**
      * Constructs a new SculptureViewerUI instance with the given data to display in the table.
@@ -51,7 +61,6 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
  */
         // Filter field for filtering rows based on text input
         searchTextField = new JTextField();
-        add(searchTextField, BorderLayout.NORTH); // put the search field up north of the table
         searchTextField.setColumns(10);
         searchTextField.setToolTipText("Type to search any information from every column");
 
@@ -61,12 +70,10 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
             public void insertUpdate(DocumentEvent e) {
                 updateFilter();
             }
-
             @Override
             public void removeUpdate(DocumentEvent e) {
                 updateFilter();
             }
-
             @Override
             public void changedUpdate(DocumentEvent e) {
                 updateFilter();
@@ -79,7 +86,7 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         });
 
 /*
- * This part is for the Update Table Panel
+ * This part is for the Add Table Panel
  */
         // Set up input fields and button for adding new rows
         JPanel inputPanel = new JPanel(new GridLayout(6, 2)); 
@@ -104,9 +111,6 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         inputPanel.add(new JLabel()); // Empty cell for spacing
         inputPanel.add(addButton);
 
-        add(inputPanel, BorderLayout.WEST);
-        add(new JScrollPane(sculptureTable));
-
         // Action listener for the Add button to insert data from text fields into the table
         addButton.addActionListener(new ActionListener() {
             @Override
@@ -114,16 +118,75 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
                 addRowToTable();
             }
         });
+
+/*
+ * This part is for the Update Table Panel
+ */
+        JPanel displayPanel = new JPanel(new GridLayout(6, 2));
+
+        updateFieldFID = new JTextField();
+        updateFieldTitle = new JTextField();
+        updateFieldLocation = new JTextField();
+        updateFieldArtist = new JTextField();
+        updateFieldMaterial = new JTextField();
+        updateButton = new JButton("Update");
+
+        // updateFieldFID.setEditable(false);
+        // updateFieldTitle.setEditable(false);
+        // updateFieldLocation.setEditable(false);
+        // updateFieldArtist.setEditable(false);
+        // updateFieldMaterial.setEditable(false);
+
+        displayPanel.add(new JLabel("Selected FID"));
+        displayPanel.add(updateFieldFID);
+        displayPanel.add(new JLabel("Selected Title"));
+        displayPanel.add(updateFieldTitle);
+        displayPanel.add(new JLabel("Selected Location"));
+        displayPanel.add(updateFieldLocation);
+        displayPanel.add(new JLabel("Selected Artist"));
+        displayPanel.add(updateFieldArtist);
+        displayPanel.add(new JLabel("Selected Material"));
+        displayPanel.add(updateFieldMaterial);
+        displayPanel.add(new JLabel()); // Empty cell for spacing
+        displayPanel.add(updateButton);
+
+        // Add mouse listener to the table to capture row selection
+        sculptureTable.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent evt) {
+                displaySelectedRow();
+            }
+        });
+
+        // Action listener for the Add button to insert data from text fields into the table
+        updateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateRowToTable();
+            }
+        });        
+
+
+/*
+ * Display all the panels
+ */
+        // Add components to the main frame
+        setLayout(new BorderLayout());
+        add(searchTextField, BorderLayout.NORTH);
+        add(inputPanel, BorderLayout.WEST);
+        add(new JScrollPane(sculptureTable), BorderLayout.CENTER);
+        add(displayPanel, BorderLayout.EAST);
+
 /*
  * Set up for JFrame after all is done. Must be put at bottom dont know why
  */
         // Set up for JFrame after the frame has been set up
         viewFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(600, 400); // Using viewFrame.setSize() cause the screen to be minimized at first. Dont know why
+        setSize(1080, 720); // Using viewFrame.setSize() cause the screen to be minimized at first. Dont know why
         setVisible(true);
     }
 
-    // addRowToTable method. Gonna put this in a differnt file
+    // addRowToTable method
     private void addRowToTable() 
     {
         // Get the data from text fields
@@ -143,6 +206,46 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         textFieldArtist.setText("");
         textFieldMaterial.setText("");
     }
+
+    // updateRowToTable method
+    private void updateRowToTable() 
+    {
+        // Get the selected row index
+        int selectedRow = sculptureTable.getSelectedRow();
+        
+        if (selectedRow >= 0) 
+        {
+            // Update values in the selected row with the new data from the text fields
+            defTableModel.setValueAt(updateFieldFID.getText(), selectedRow, 0);
+            defTableModel.setValueAt(updateFieldTitle.getText(), selectedRow, 1);
+            defTableModel.setValueAt(updateFieldLocation.getText(), selectedRow, 2);
+            defTableModel.setValueAt(updateFieldArtist.getText(), selectedRow, 3);
+            defTableModel.setValueAt(updateFieldMaterial.getText(), selectedRow, 4);
+            
+            // Show a success message
+            JOptionPane.showMessageDialog(this, "Row updated successfully!");
+        } 
+        else 
+        {
+            // Show an error message if no row is selected
+            JOptionPane.showMessageDialog(this, "Please select a row to update.");
+        }
+    }
+
+    // Method to display the selected row's details in the display panel
+    private void displaySelectedRow() 
+    {
+        int selectedRow = sculptureTable.getSelectedRow();
+        if (selectedRow >= 0) 
+        {
+            updateFieldFID.setText(defTableModel.getValueAt(selectedRow, 0).toString());
+            updateFieldTitle.setText(defTableModel.getValueAt(selectedRow, 1).toString());
+            updateFieldLocation.setText(defTableModel.getValueAt(selectedRow, 2).toString());
+            updateFieldArtist.setText(defTableModel.getValueAt(selectedRow, 3).toString());
+            updateFieldMaterial.setText(defTableModel.getValueAt(selectedRow, 4).toString());
+        }
+    }
+
 
     // Tester for the SculptureViewerUI class. Uncomment for debugging
     public static void main(String[] args) {
