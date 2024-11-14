@@ -27,6 +27,7 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     private JTextField textFieldMaterial;
     private JButton addButton;
     private JButton updateButton;
+    private JButton deleteButton;
 
     /**
      * Constructs a new SculptureViewerUI instance with the given data to display in the table.
@@ -105,6 +106,7 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         textFieldMaterial = new JTextField();
         addButton = new JButton("Add");
         updateButton = new JButton("Update");
+        deleteButton = new JButton("Delete");
 
         // Add components to the Panel
         manipulationPanel.add(new JLabel("FID"));
@@ -121,6 +123,7 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         manipulationPanel.add(new JLabel());
         manipulationPanel.add(addButton);
         manipulationPanel.add(updateButton);
+        manipulationPanel.add(deleteButton);
 
         // Action listener for the Add button to insert data from text fields into the table
         addButton.addActionListener(new ActionListener() {
@@ -141,6 +144,13 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
             @Override
             public void actionPerformed(ActionEvent e) {
                 updateRowToTable();
+            }
+        });        
+        // Action listener for the Add button to insert data from text fields into the table
+        deleteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                deleteRowToTable();
             }
         });        
 
@@ -235,6 +245,24 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         }
     }
 
+    /**
+     * 
+     */
+    // updateRowToTable method
+    private void deleteRowToTable() 
+    {
+        // Get the selected row index
+        int selectedRow = sculptureTable.getSelectedRow();
+        
+        try
+        {
+            defTableModel.removeRow(selectedRow);
+        }
+        catch(Exception ex)
+        {
+            JOptionPane.showMessageDialog(this, "Please select a row to delete.");
+        }
+    }
 
     // // Tester for the SculptureViewerUI class. Uncomment for debugging
     // public static void main(String[] args) {
