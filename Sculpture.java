@@ -33,24 +33,12 @@ public class Sculpture {
      *
      * @return the sculpture's FID
      */
-    public int getFid() { 
-        return fid; 
-    }
-    public String getTitle() { 
-        return title; 
-    }
-    public String getLocation() { 
-        return location; 
-    }
-    public String getArtist() { 
-        return artist; 
-    }
-    public String getMaterial() { 
-        return material; 
-    }
-    public int getRating() { 
-        return rating; 
-    }
+    public int getFid() { return fid; }
+    public String getTitle() { return title; }
+    public String getLocation() { return location; }
+    public String getArtist() { return artist; }
+    public String getMaterial() { return material; }
+    public int getRating() { return rating; }
 
     // // Tester for the sculpture class. Uncomment for debugging
     // public static void main(String[] args) {
