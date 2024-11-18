@@ -13,7 +13,9 @@ public class SculptureManager implements SculptureTemplate {
      * Constructs a SculptureManager instance and loads data from the specified file.
      */
     public SculptureManager() {
-        sculptures  = loadSculptures(FILE_NAME); // Load a file from the FILE_NAME template
+        System.out.println(FILE_NAME); 
+        String processedFileName = checkFileName(FILE_NAME);
+        sculptures  = loadSculptures(processedFileName); // Load a file from the FILE_NAME template
     }
 
     /**
@@ -73,6 +75,29 @@ public class SculptureManager implements SculptureTemplate {
             data[i][5] = sculpture.getRating();
         }
         return data;
+    }
+
+    /**
+     * 
+     * @param filePath
+     * @return
+     */
+    private String checkFileName(String filePath) 
+    {
+        System.out.println(filePath); 
+        if (filePath.endsWith(".csv")) 
+        {
+            // Rename the file to .txt
+            String newFilePath = filePath.replace(".csv", ".txt"); // String is immutable
+            System.out.println(newFilePath); 
+            return newFilePath;
+        } 
+        else if (!filePath.endsWith(".txt")) 
+        {
+            System.err.println("Only .txt or .csv files are supported.");
+            return null;
+        }
+        return filePath;
     }
 
     // // Tester for the SculptureManager class. Uncomment for debugging
