@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ public class SculptureManager implements SculptureTemplate {
      * Constructs a SculptureManager instance and loads data from the specified file.
      */
     public SculptureManager() {
-        System.out.println(FILE_NAME); 
+        // System.out.println(FILE_NAME); 
         String processedFileName = checkFileName(FILE_NAME);
         sculptures  = loadSculptures(processedFileName); // Load a file from the FILE_NAME template
     }
@@ -47,6 +48,7 @@ public class SculptureManager implements SculptureTemplate {
                 // System.out.println(line); // debugger to see if File Reader read correctly
                 
             }
+            br.close();
         } 
         catch (IOException e) 
         {
@@ -78,23 +80,25 @@ public class SculptureManager implements SculptureTemplate {
     }
 
     /**
-     * 
+     * Check the file type. Only accept .csv and .txt file
      * @param filePath
      * @return
      */
     private String checkFileName(String filePath) 
     {
-        System.out.println(filePath); 
+        File file = new File(filePath);
         if (filePath.endsWith(".csv")) 
         {
             // Rename the file to .txt
-            String newFilePath = filePath.replace(".csv", ".txt"); // String is immutable
-            System.out.println(newFilePath); 
+            String newFilePath = filePath.replace(".csv", ".txt");
+            File newFile = new File(newFilePath); // cant rename with creating a new abstract file?
+            file.renameTo(newFile);
+            System.out.println("File renamed to: " + newFilePath);
             return newFilePath;
         } 
         else if (!filePath.endsWith(".txt")) 
         {
-            System.err.println("Only .txt or .csv files are supported.");
+            System.err.println("Unsupported file type. Only .txt or .cvs files are allowed.");
             return null;
         }
         return filePath;
