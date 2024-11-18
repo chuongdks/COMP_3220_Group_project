@@ -5,7 +5,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Loads sculpture data from a file and stores it in a list of Sculpture objects.
+ * Loads sculpture data from a file and stores it in a list of Sculpture objects. 
+ * 
+ * Improvement idea: 
+ * _ Create another copy of the .csv file when turn it to .txt instead of replacing it
+ * _ 
  */
 public class SculptureManager implements SculptureTemplate {
     private ArrayList<Sculpture> sculptures;

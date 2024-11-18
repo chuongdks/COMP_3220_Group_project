@@ -11,6 +11,12 @@ import java.awt.event.MouseEvent;
 
 /**
  * Provides a graphical user interface for viewing and filtering sculpture data.
+ * 
+ * Improvement ideas: 
+ * _ Add a good Rating system that save the number of ratings and calculate the average
+ * _ Display more details when clicking on a row (Display users written review, pictures, map location,...)
+ * _ Cuztomize the Layout to make it look better instead of putting it a BorderLayout() (limited to NSEW direction)
+ * _ Add a Data validity check for the updated Table content (Check if the ID column is in increasing order, check repeating content, check if user's input is valid,...)
  */
 public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     private JFrame viewFrame;
