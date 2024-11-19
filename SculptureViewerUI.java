@@ -31,6 +31,7 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     private JTextField textFieldLocation;
     private JTextField textFieldArtist;
     private JTextField textFieldMaterial;
+    private JTextField textFieldRating;
     private JButton addButton;
     private JButton updateButton;
     private JButton deleteButton;
@@ -110,6 +111,7 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         textFieldLocation = new JTextField();
         textFieldArtist = new JTextField();
         textFieldMaterial = new JTextField();
+        textFieldRating = new JTextField();
         addButton = new JButton("Add");
         updateButton = new JButton("Update");
         deleteButton = new JButton("Delete");
@@ -125,8 +127,10 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         manipulationPanel.add(textFieldArtist);
         manipulationPanel.add(new JLabel("Material"));
         manipulationPanel.add(textFieldMaterial);
-        manipulationPanel.add(new JLabel());
-        manipulationPanel.add(new JLabel());
+        manipulationPanel.add(new JLabel("Rating"));
+        manipulationPanel.add(textFieldRating);
+        manipulationPanel.add(new JLabel()); // Create empty space
+        manipulationPanel.add(new JLabel()); // Create empty space
         manipulationPanel.add(addButton);
         manipulationPanel.add(updateButton);
         manipulationPanel.add(deleteButton);
@@ -177,9 +181,8 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     }
 
     /**
-     * 
+     * Function to add a row to the JTable
      */
-    // addRowToTable method
     private void addRowToTable() 
     {
         // Get the data from text fields
@@ -188,9 +191,10 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         String location = textFieldLocation.getText();
         String artist = textFieldArtist.getText();
         String material = textFieldMaterial.getText();
+        String rating = textFieldRating.getText();
 
         // Add the data as a new row in the table model
-        defTableModel.addRow(new Object[]{fid, title, location, artist, material});
+        defTableModel.addRow(new Object[]{fid, title, location, artist, material, rating});
 
         // Clear the text fields after adding
         textFieldFID.setText("");
@@ -198,13 +202,14 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         textFieldLocation.setText("");
         textFieldArtist.setText("");
         textFieldMaterial.setText("");
+        textFieldRating.setText("");
 
         // Show a success message
         JOptionPane.showMessageDialog(this, "Row added successfully!");
     }
 
     /**
-     * 
+     * Function to update the selected row in the JTable
      */
     // updateRowToTable method
     private void updateRowToTable() 
@@ -220,6 +225,7 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
             defTableModel.setValueAt(textFieldLocation.getText(), selectedRow, 2);
             defTableModel.setValueAt(textFieldArtist.getText(), selectedRow, 3);
             defTableModel.setValueAt(textFieldMaterial.getText(), selectedRow, 4);
+            defTableModel.setValueAt(textFieldRating.getText(), selectedRow, 5);
             
             // Show a success message
             JOptionPane.showMessageDialog(this, "Row updated successfully!");
@@ -232,7 +238,7 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     }
 
     /**
-     * 
+     * Function to display the selected row to the JTextfield below
      */
     // Method to display the selected row's details in the display panel
     private void displaySelectedRow() 
@@ -248,11 +254,12 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
             textFieldLocation.setText(defTableModel.getValueAt(selectedRow, 2).toString());
             textFieldArtist.setText(defTableModel.getValueAt(selectedRow, 3).toString());
             textFieldMaterial.setText(defTableModel.getValueAt(selectedRow, 4).toString());
+            textFieldRating.setText(defTableModel.getValueAt(selectedRow, 5).toString());
         }
     }
 
     /**
-     * 
+     * Function to Delete selected row in the JTable
      */
     // updateRowToTable method
     private void deleteRowToTable() 
@@ -264,7 +271,7 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         {
             defTableModel.removeRow(selectedRow);
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             JOptionPane.showMessageDialog(this, "Please select a row to delete.");
         }

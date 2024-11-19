@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * 
  * Improvement idea: 
  * _ Create another copy of the .csv file when turn it to .txt instead of replacing it
- * _ 
+ * _ Change from uing ArrayList to using the Hashmap from Sculpture.java to retrieve data
  */
 public class SculptureManager implements SculptureTemplate {
     private ArrayList<Sculpture> sculptures;
