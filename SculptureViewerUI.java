@@ -181,7 +181,7 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     }
 
     /**
-     * Function to add a row to the JTable
+     * Method to add a row to the JTable
      */
     private void addRowToTable() 
     {
@@ -217,14 +217,29 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     }
 
     /**
-     * Function to update the selected row in the JTable
+     * Method to update the selected row in the JTable
      */
-    // updateRowToTable method
     private void updateRowToTable() 
     {
         // Get the selected row index
         int selectedRow = sculptureTable.getSelectedRow();
-        
+
+        // Get the data from text fields
+        String fid = textFieldFID.getText();
+        String title = textFieldTitle.getText();
+        String location = textFieldLocation.getText();
+        String artist = textFieldArtist.getText();
+        String material = textFieldMaterial.getText();
+        String rating = textFieldRating.getText();
+
+        // Validate inputs using InputValidator
+        String errorMessage = InputChecker.validateInputs(fid, title, location, artist, material, rating);
+        if (errorMessage != null) 
+        {
+            JOptionPane.showMessageDialog(this, errorMessage, "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         if (selectedRow >= 0) 
         {
             // Update values in the selected row with the new data from the text fields
@@ -246,9 +261,8 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     }
 
     /**
-     * Function to display the selected row to the JTextfield below
+     * Method to display the selected row to the JTextfield below
      */
-    // Method to display the selected row's details in the display panel
     private void displaySelectedRow() 
     {
         // Get the selected row index
