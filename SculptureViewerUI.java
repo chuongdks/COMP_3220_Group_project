@@ -193,24 +193,11 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         String material = textFieldMaterial.getText();
         String rating = textFieldRating.getText();
 
-        // Validate FID (must be a number)
-        if (!isNumeric(fid)) 
+        // Validate inputs using InputValidator
+        String errorMessage = InputChecker.validateInputs(fid, title, location, artist, material, rating);
+        if (errorMessage != null) 
         {
-            JOptionPane.showMessageDialog(this, "FID must be a valid number.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        // Validate Rating (must be a number)
-        if (!isNumeric(rating)) 
-        {
-            JOptionPane.showMessageDialog(this, "Rating must be a valid number.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        // Validate other fields (non-empty)
-        if (fid.isEmpty() || title.isEmpty() || location.isEmpty() || artist.isEmpty() || material.isEmpty() || rating.isEmpty()) 
-        {
-            JOptionPane.showMessageDialog(this, "All text fields must be filled.", "Input Empty Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, errorMessage, "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -294,26 +281,10 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         }
         catch (Exception ex)
         {
-            JOptionPane.showMessageDialog(this, "Please select a row to delete.");
+            JOptionPane.showMessageDialog(this, "Please select a row to delete.", "Delete Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
-    /**
-     * 
-     * @param str
-     * @return true if String is a number, else false
-     */
-    private boolean isNumeric(String str) {
-        try 
-        {
-            Double.parseDouble(str); // Parse as a double to check for float number just in case
-            return true;
-        } 
-        catch (NumberFormatException e) 
-        {
-            return false;
-        }
-    }
     // // Tester for the SculptureViewerUI class. Uncomment for debugging
     // public static void main(String[] args) {
     //     // Sample data array representing sculptures
