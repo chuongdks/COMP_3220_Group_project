@@ -1,5 +1,7 @@
 /**
  * Utility class for input validation
+ * Improvement ideas: 
+ * _ Add a checker for fid and rating. Turn them to number, then check (fid number should be unique and rating limits from 0 to 5 stars)
  */
 public class InputChecker {
 
@@ -32,14 +34,14 @@ public class InputChecker {
      */
     public static String validateInputs(String fid, String title, String location, String artist, String material, String rating) 
     {
+        if (fid.isEmpty() || title.isEmpty() || location.isEmpty() || artist.isEmpty() || material.isEmpty() || rating.isEmpty()) {
+            return "All text fields must be filled.";
+        }
         if (!isNumeric(fid)) {
             return "FID must be a valid number.";
         }
         if (!isNumeric(rating)) {
             return "Rating must be a valid number.";
-        }
-        if (fid.isEmpty() || title.isEmpty() || location.isEmpty() || artist.isEmpty() || material.isEmpty() || rating.isEmpty()) {
-            return "All text fields must be filled.";
         }
         return null; // No Error Message
     }

@@ -243,12 +243,12 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         if (selectedRow >= 0) 
         {
             // Update values in the selected row with the new data from the text fields
-            defTableModel.setValueAt(textFieldFID.getText(), selectedRow, 0);
-            defTableModel.setValueAt(textFieldTitle.getText(), selectedRow, 1);
-            defTableModel.setValueAt(textFieldLocation.getText(), selectedRow, 2);
-            defTableModel.setValueAt(textFieldArtist.getText(), selectedRow, 3);
-            defTableModel.setValueAt(textFieldMaterial.getText(), selectedRow, 4);
-            defTableModel.setValueAt(textFieldRating.getText(), selectedRow, 5);
+            defTableModel.setValueAt(fid, selectedRow, 0);
+            defTableModel.setValueAt(title, selectedRow, 1);
+            defTableModel.setValueAt(location, selectedRow, 2);
+            defTableModel.setValueAt(artist, selectedRow, 3);
+            defTableModel.setValueAt(material, selectedRow, 4);
+            defTableModel.setValueAt(rating, selectedRow, 5);
             
             // Show a success message
             JOptionPane.showMessageDialog(this, "Row updated successfully!");

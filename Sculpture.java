@@ -2,7 +2,7 @@
  * Represents a sculpture with fields for ID, title, location, artist, and material and reviews.
  * 
  * Improvement idea: 
- * _ Use HashMap just like Record.java from the demo FileManager
+ * _ Use HashMap just like Record.java from the demo FileManager (Dont use manual object creation like ArrayList usage)
  */
 public class Sculpture {
     private int fid;
