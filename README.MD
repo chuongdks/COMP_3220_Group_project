@@ -15,7 +15,7 @@ HOW TO RUN THE APPLICATION using Jar file:
 HOW TO RUN THE APPLICATION directly and be able to change file:
 1. Download the whole repository
 2. (Optional) Open SculptureTemplate.java and change content of FILE_NAME to change the file type
-3. Run the SculptureMainApplication.java file:
-    _ javac SculptureMainApplication.java
-    _ java SculptureMainApplication
+3. Run the SculptureMainApplication.java file:<br />
+javac SculptureMainApplication.java<br />
+java SculptureMainApplication
 4. Delete the SculptureManager.class file If you want to try a different file type
