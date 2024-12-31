@@ -1,12 +1,8 @@
 /**
-<<<<<<< HEAD
- * Represents a sculpture with fields for ID, title, location, artist, and material.
-=======
  * Represents a sculpture with fields for ID, title, location, artist, and material and reviews.
  * 
  * Improvement idea: 
  * _ Use HashMap just like Record.java from the demo FileManager (Dont use manual object creation like ArrayList usage)
->>>>>>> repo-b/main
  */
 public class Sculpture {
     private int fid;
@@ -14,38 +10,25 @@ public class Sculpture {
     private String location;
     private String artist;
     private String material;
-<<<<<<< HEAD
-=======
     private int rating;
->>>>>>> repo-b/main
 
     /**
      * Constructs a new Sculpture instance with specified attributes.
      *
      * @param fid the unique identifier of the sculpture
-<<<<<<< HEAD
-=======
      * @param review the rating of the sculpture
->>>>>>> repo-b/main
      * @param title the title of the sculpture
      * @param location the location of the sculpture
      * @param artist the artist who created the sculpture
      * @param material the material used for the sculpture
      */
-<<<<<<< HEAD
-    public Sculpture(int fid, String title, String location, String artist, String material) {
-=======
     public Sculpture(int fid, String title, String location, String artist, String material, int rating) {
->>>>>>> repo-b/main
         this.fid = fid;
         this.title = title;
         this.location = location;
         this.artist = artist;
         this.material = material;
-<<<<<<< HEAD
-=======
         this.rating= rating;
->>>>>>> repo-b/main
     }
 
     /**
@@ -53,23 +36,6 @@ public class Sculpture {
      *
      * @return the sculpture's FID
      */
-<<<<<<< HEAD
-    public int getFid() { 
-        return fid; 
-    }
-    public String getTitle() { 
-        return title; 
-    }
-    public String getLocation() { 
-        return location; 
-    }
-    public String getArtist() { 
-        return artist; 
-    }
-    public String getMaterial() { 
-        return material; 
-    }
-=======
     public int getFid() { return fid; }
     public String getTitle() { return title; }
     public String getLocation() { return location; }
@@ -87,5 +53,4 @@ public class Sculpture {
     //     System.out.println(sculpture.getArtist()); 
     //     System.out.println(sculpture.getMaterial()); 
     // }    
->>>>>>> repo-b/main
 }

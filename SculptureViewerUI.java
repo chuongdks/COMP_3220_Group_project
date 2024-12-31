@@ -4,12 +4,6 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
-<<<<<<< HEAD
-import java.awt.event.*; // Probably needed it if u need to add a button to handle Event
-
-/**
- * Provides a graphical user interface for viewing and filtering sculpture data.
-=======
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -23,7 +17,6 @@ import java.awt.event.MouseEvent;
  * _ Display more details when clicking on a row (Display users written review, pictures, map location,...)
  * _ Cuztomize the Layout to make it look better instead of putting it a BorderLayout() (limited to NSEW direction)
  * _ Add a Data validity check for the updated Table content (Check if the ID column is in increasing order, check repeating content, check if user's input is valid,...)
->>>>>>> repo-b/main
  */
 public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     private JFrame viewFrame;
@@ -32,8 +25,6 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     private JTextField searchTextField;
     private TableRowSorter<DefaultTableModel> rowSorter;
 
-<<<<<<< HEAD
-=======
     // First Panel: Input fields and button to add a row
     private JTextField textFieldFID;
     private JTextField textFieldTitle;
@@ -45,19 +36,15 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     private JButton updateButton;
     private JButton deleteButton;
 
->>>>>>> repo-b/main
     /**
      * Constructs a new SculptureViewerUI instance with the given data to display in the table.
      *
      * @param data a 2D array containing sculpture data to populate the table
      */
     public SculptureViewerUI(Object[][] data) {
-<<<<<<< HEAD
-=======
 /*
  * This part is for Setting up JFrame, JTable and add a TableRowSorter
  */
->>>>>>> repo-b/main
         // Set up JFrame 
         viewFrame = new JFrame("Sculpture Art Data Viewer");
         JFrame.setDefaultLookAndFeelDecorated(true);
@@ -65,23 +52,11 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         // Set up JTable and DefaultTableModel to fill up the Table content
         defTableModel = new DefaultTableModel(data, FIELD_LABELS); // Parameter is Double Array Object for the Rows and Array Object for the Column
         sculptureTable = new JTable(defTableModel);
-<<<<<<< HEAD
-
-=======
         
->>>>>>> repo-b/main
         // TableRowSorter for Sorting each attributes
         rowSorter = new TableRowSorter<>(defTableModel); // the parameter is a DefaultTableModel object
         sculptureTable.setRowSorter(rowSorter);
 
-<<<<<<< HEAD
-        // Filter field for filtering rows based on text input
-        searchTextField = new JTextField();
-        add(searchTextField, BorderLayout.NORTH); // put the search field up north of the table
-        searchTextField.setColumns(10);
-        searchTextField.setToolTipText("Type to search any information from every column");
-
-=======
 /*
  * This part is for the Display Panel (Table Name, Search bar, Table)
  */
@@ -104,25 +79,16 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
         displayPanel.add(searchTextField, BorderLayout.CENTER);
         displayPanel.add(new JScrollPane(sculptureTable), BorderLayout.SOUTH);
 
->>>>>>> repo-b/main
         // Add DocumentListener to update the filter in real-time
         searchTextField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
                 updateFilter();
             }
-<<<<<<< HEAD
-
-=======
->>>>>>> repo-b/main
             @Override
             public void removeUpdate(DocumentEvent e) {
                 updateFilter();
             }
-<<<<<<< HEAD
-
-=======
->>>>>>> repo-b/main
             @Override
             public void changedUpdate(DocumentEvent e) {
                 updateFilter();
@@ -134,23 +100,6 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
             }
         });
 
-<<<<<<< HEAD
-        // Add components to frame
-        add(new JScrollPane(sculptureTable));
-
-        // Set up for JFrame after the frame has been set up
-        viewFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(600, 400); // Using viewFrame.setSize() cause the screen to be minimized at first. Dont know why
-        setVisible(true);
-    }
-
-    // public static void main(String[] args) {
-    //     // Sample data array representing sculptures
-    //     Object[][] data = {
-    //         {0, "R.H. Herb Gray Bust"   , "Dieppe Gardens"  , "Unknown"         , "Bronze"          },
-    //         {1, "Dieppe Gardens Plaque" , "Jackson Park"    , "Leo Rosenthal"   , "Painted Steel"   },
-    //         {2, "Eternal Flame"         , "City Hall"       , "Jane Sculpture"  , "Granite"         }
-=======
 /*
  * This part is for the Add, Update and Delete Table Panel
  */
@@ -357,14 +306,9 @@ public class SculptureViewerUI extends JFrame implements SculptureTemplate {
     //         {0, "R.H. Herb Gray Bust"   , "Dieppe Gardens"  , "Unknown"         , "Bronze",         "1"   },
     //         {1, "Dieppe Gardens Plaque" , "Jackson Park"    , "Leo Rosenthal"   , "Painted Steel",  "2"   },
     //         {2, "Eternal Flame"         , "City Hall"       , "Jane Sculpture"  , "Granite",        "3"   }
->>>>>>> repo-b/main
     //     };
 
     //     // Instantiate the SculptureViewerUI with sample data
     //     new SculptureViewerUI(data);
-<<<<<<< HEAD
-    }
-=======
     // }
->>>>>>> repo-b/main
 }
