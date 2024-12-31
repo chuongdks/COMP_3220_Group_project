@@ -10,7 +10,7 @@ Tutorial videos for Java Swing:
 HOW TO RUN THE APPLICATION using Jar file:
 1. Download Group7_Project.jar and sculptures.txt.
 2. Open an instance of Command Prompt and navigate to the relevant directory (where the .jar and .txt were downloaded).
-3. Run the command: java -jar sculpture_data.jar
+3. Run the command: java -jar Group7_Project.jar
 
 HOW TO RUN THE APPLICATION directly and be able to change file:
 1. Download the whole repository
